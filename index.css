@@ -1,0 +1,63 @@
+#header {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 32px;
+    background-color: orange;
+    border-radius: 32px;
+}
+
+#detailsLink {
+    color: yellow;
+}
+
+#detailsDiv {
+    display: none;
+    justify-content: center;
+}
+
+#detailsLinkDiv {
+    border-radius: 8px;
+    margin-left: 15px;
+    display: inline;
+    background-color: #3b2f80;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#register {
+    font-size: .8em;
+    border-radius: 8px;
+    background-color: #3b2f80;
+    color: yellow;
+}
+
+#subheader {
+    font-family: 'Jokerman', sans-serif;
+}
+
+#headerLogo {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+#logo {
+    width: 400px;
+}
+
+#flyerDiv {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+    background-color: #3b2f80;
+}
+
+#JotFormIFrame-231155895577166 {
+    display: none;
+}
