@@ -22,14 +22,14 @@
         else {
             detailsDiv.style.display = 'none';
             flyerDiv.style.display = 'flex';
-            detailsLink.innerText = 'See Details';
+            detailsLink.innerHTML = '<p>Click Here to <br> See Details!</p>';
             linkIsDisplayed = false;
         }
     }
     function displayForm() {
         if (!formIsDisplayed) {
             form.style.display = 'inline';
-            registerButton.innerText = 'Cancel';
+            registerButton.innerText = 'Close';
             formIsDisplayed = true;
         }
         else {

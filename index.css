@@ -1,6 +1,7 @@
 #header {
     margin-left: 5%;
     margin-right: 5%;
+   
     text-align: center;
     font-size: 32px;
     background-color: orange;
@@ -9,11 +10,17 @@
 
 #detailsLink {
     color: yellow;
+    text-decoration: none;
 }
 
 #detailsDiv {
     display: none;
     justify-content: center;
+    max-width: 100%;
+}
+
+#detailsImg {
+    max-width: 100%;
 }
 
 #detailsLinkDiv {
@@ -27,15 +34,14 @@ button:hover {
     cursor: pointer;
 }
 
-#register {
+#register, #detailsLink {
+    margin-top: 10px;
+    width: 177px;
+    height: 116px;
     font-size: .8em;
     border-radius: 8px;
     background-color: #3b2f80;
     color: yellow;
-}
-
-#subheader {
-    font-family: 'Jokerman', sans-serif;
 }
 
 #headerLogo {
@@ -48,10 +54,27 @@ button:hover {
     width: 400px;
 }
 
-#flyerDiv {
+#flyerDiv,
+#flyerImg {
     display: flex;
     justify-content: center;
+    max-width: 100%;
 }
+/*@media screen and (min-width: 450px) {
+
+    #flyerDiv,
+    #flyerImg {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    #detailsDiv,
+    #detailsImg {
+        justify-content: center;
+        max-width: 100%;
+    }
+}*/
 
 body {
     margin: 0;
@@ -60,4 +83,5 @@ body {
 
 #JotFormIFrame-231155895577166 {
     display: none;
+    z-index: 5;
 }
