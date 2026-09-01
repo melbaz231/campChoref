@@ -56,9 +56,9 @@ function validate(values: EnrollmentFormValues): FormErrors {
 }
 
 const fieldClass =
-  'w-full rounded-xl border border-white/15 bg-night-950/60 px-4 py-3 text-white placeholder:text-night-300 transition focus:border-sun-300 focus:outline-none';
-const labelClass = 'mb-1.5 block text-sm font-semibold text-night-100';
-const errorClass = 'mt-1.5 text-sm text-red-300';
+  'w-full rounded-xl border border-steel-300 bg-white px-4 py-3 text-steel-900 placeholder:text-steel-400 transition focus:border-steel-600 focus:outline-none';
+const labelClass = 'mb-1.5 block text-sm font-semibold text-steel-800';
+const errorClass = 'mt-1.5 text-sm font-medium text-red-600';
 
 export default function EnrollmentForm() {
   const formId = useId();
@@ -112,21 +112,21 @@ export default function EnrollmentForm() {
 
   if (status === 'success') {
     return (
-      <section id="register" className="scroll-mt-20 py-20">
+      <section id="register" className="scroll-mt-20 bg-white py-20">
         <div className="mx-auto max-w-2xl px-5">
-          <div className="rounded-3xl border border-sun-300/30 bg-sun-300/10 p-10 text-center">
+          <div className="rounded-3xl border-2 border-sun-500 bg-sun-100 p-10 text-center">
             <span aria-hidden="true" className="text-5xl">
               🎉
             </span>
-            <h2 className="mt-4 text-3xl font-extrabold text-white">You&apos;re registered!</h2>
-            <p className="mt-3 text-night-100">
+            <h2 className="mt-4 text-3xl font-extrabold text-steel-900">You&apos;re registered!</h2>
+            <p className="mt-3 text-steel-700">
               We received the registration and {camp.director} will follow up with location and
               payment details before camp starts.
             </p>
             <button
               type="button"
               onClick={() => setStatus('idle')}
-              className="mt-8 rounded-full bg-sun-400 px-7 py-3 font-semibold text-night-900 transition hover:bg-sun-300"
+              className="mt-8 rounded-full bg-steel-600 px-7 py-3 font-semibold text-white transition hover:bg-steel-700"
             >
               Register another camper
             </button>
@@ -137,25 +137,32 @@ export default function EnrollmentForm() {
   }
 
   return (
-    <section id="register" className="scroll-mt-20 border-t border-white/10 bg-night-950/40 py-20">
+    <section id="register" className="scroll-mt-20 bg-white py-20">
       <div className="mx-auto max-w-3xl px-5">
         <div className="text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-grape-500">
+            Hurry — space is limited
+          </p>
+          <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-steel-900 sm:text-5xl">
             Register for camp
           </h2>
-          <p className="mt-4 text-lg text-night-200">
-            Hurry — space is limited. Tuition is {camp.costLabel}, due at the start of each week.
+          <p className="mt-4 text-lg text-steel-700">
+            Tuition is {camp.costLabel}, due at the start of each week.
           </p>
         </div>
 
         {!isSupabaseConfigured && (
-          <p className="mt-8 rounded-2xl border border-amber-300/40 bg-amber-300/10 p-4 text-sm text-amber-100">
+          <p className="mt-8 rounded-2xl border border-sand-500 bg-sand-100 p-4 text-sm text-sand-600">
             Online registration is not connected yet. Call or text {camp.director} at {camp.phone} to
             sign up.
           </p>
         )}
 
-        <form onSubmit={handleSubmit} noValidate className="mt-10 grid gap-6 sm:grid-cols-2">
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          className="mt-10 grid gap-6 rounded-3xl border border-steel-200 bg-steel-50 p-6 shadow-sm sm:grid-cols-2 sm:p-8"
+        >
           <div>
             <label className={labelClass} htmlFor={`${formId}-camperFirstName`}>
               Camper first name
@@ -263,19 +270,19 @@ export default function EnrollmentForm() {
                 return (
                   <label
                     key={week.id}
-                    className={`flex cursor-pointer items-center gap-3 rounded-xl border p-4 transition ${
+                    className={`flex cursor-pointer items-center gap-3 rounded-xl border-2 p-4 transition ${
                       checked
-                        ? 'border-sun-300 bg-sun-300/10'
-                        : 'border-white/15 bg-night-950/60 hover:border-white/30'
+                        ? 'border-steel-600 bg-white'
+                        : 'border-steel-200 bg-white hover:border-steel-400'
                     }`}
                   >
                     <input
                       type="checkbox"
-                      className="h-4 w-4 accent-sun-400"
+                      className="h-4 w-4 accent-steel-600"
                       checked={checked}
                       onChange={() => toggleWeek(week.id)}
                     />
-                    <span className="text-sm text-white">{week.label}</span>
+                    <span className="text-sm text-steel-900">{week.label}</span>
                   </label>
                 );
               })}
@@ -319,7 +326,7 @@ export default function EnrollmentForm() {
           <div className="sm:col-span-2">
             <label className={labelClass} htmlFor={`${formId}-medicalNotes`}>
               Allergies or medical notes{' '}
-              <span className="font-normal text-night-300">(optional)</span>
+              <span className="font-normal text-steel-500">(optional)</span>
             </label>
             <textarea
               id={`${formId}-medicalNotes`}
@@ -354,7 +361,7 @@ export default function EnrollmentForm() {
           <div className="sm:col-span-2">
             <label className={labelClass} htmlFor={`${formId}-notes`}>
               Anything else we should know?{' '}
-              <span className="font-normal text-night-300">(optional)</span>
+              <span className="font-normal text-steel-500">(optional)</span>
             </label>
             <textarea
               id={`${formId}-notes`}
@@ -368,7 +375,7 @@ export default function EnrollmentForm() {
           {submitError && (
             <p
               role="alert"
-              className="rounded-xl border border-red-400/40 bg-red-400/10 p-4 text-sm text-red-100 sm:col-span-2"
+              className="rounded-xl border border-red-300 bg-red-50 p-4 text-sm text-red-700 sm:col-span-2"
             >
               {submitError}
             </p>
@@ -378,11 +385,11 @@ export default function EnrollmentForm() {
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="w-full rounded-full bg-sun-400 px-8 py-4 text-lg font-semibold text-night-900 shadow-xl shadow-sun-500/20 transition hover:bg-sun-300 disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-full rounded-full bg-steel-600 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-steel-900/20 transition hover:bg-steel-700 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {status === 'submitting' ? 'Submitting…' : 'Submit registration'}
             </button>
-            <p className="mt-3 text-center text-xs text-night-300">
+            <p className="mt-3 text-center text-xs text-steel-500">
               Your information is stored securely and only used to run camp.
             </p>
           </div>

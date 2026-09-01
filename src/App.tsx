@@ -7,10 +7,10 @@ import Highlights from './components/Highlights';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-night-900">
+    <div className="min-h-screen bg-white">
       <a
         href="#register"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-sun-300 focus:px-4 focus:py-2 focus:font-semibold focus:text-night-900"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-sun-400 focus:px-4 focus:py-2 focus:font-semibold focus:text-steel-950"
       >
         Skip to registration
       </a>

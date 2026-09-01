@@ -20,17 +20,17 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'border-b border-white/10 bg-night-950/85 backdrop-blur-lg' : 'bg-transparent'
+      className={`on-deep sticky top-0 z-50 transition-colors duration-300 ${
+        scrolled ? 'border-b border-white/10 bg-steel-950/90 backdrop-blur-lg' : 'bg-transparent'
       }`}
     >
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3"
+        className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5"
       >
         <a href="#top" className="flex items-center gap-3 rounded-lg">
           <img src="/media/pic.png" alt="" className="h-10 w-auto" />
-          <span className="font-display text-lg font-bold tracking-wide text-sun-200">
+          <span className="font-display text-lg font-bold tracking-wide text-white">
             {camp.name}
           </span>
         </a>
@@ -40,14 +40,14 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-night-100 transition hover:bg-white/10 hover:text-white"
+              className="rounded-full px-4 py-2 text-sm font-medium text-steel-100 transition hover:bg-white/10 hover:text-white"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#register"
-            className="ml-2 rounded-full bg-sun-400 px-5 py-2 text-sm font-semibold text-night-900 shadow-lg shadow-sun-500/20 transition hover:bg-sun-300"
+            className="ml-2 rounded-full bg-sun-400 px-5 py-2 text-sm font-bold text-steel-950 shadow-lg shadow-sun-500/20 transition hover:bg-sun-300"
           >
             Sign up
           </a>
@@ -59,7 +59,7 @@ export default function Header() {
           aria-controls="mobile-nav"
           aria-label="Toggle navigation"
           onClick={() => setMenuOpen((open) => !open)}
-          className="rounded-lg p-2 text-night-100 transition hover:bg-white/10 sm:hidden"
+          className="rounded-lg p-2 text-steel-100 transition hover:bg-white/10 sm:hidden"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
@@ -73,14 +73,14 @@ export default function Header() {
       </nav>
 
       {menuOpen && (
-        <div id="mobile-nav" className="border-t border-white/10 bg-night-950/95 sm:hidden">
+        <div id="mobile-nav" className="border-t border-white/10 bg-steel-950/95 sm:hidden">
           <div className="mx-auto flex max-w-6xl flex-col px-5 py-2">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="rounded-lg px-3 py-3 text-base font-medium text-night-100 transition hover:bg-white/10"
+                className="rounded-lg px-3 py-3 text-base font-medium text-steel-100 transition hover:bg-white/10"
               >
                 {link.label}
               </a>

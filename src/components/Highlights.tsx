@@ -2,13 +2,16 @@ import { highlights } from '../data/camp';
 
 export default function Highlights() {
   return (
-    <section id="about" className="scroll-mt-20 border-t border-white/10 bg-night-950/40 py-20">
+    <section id="about" className="scroll-mt-20 bg-white py-20">
       <div className="mx-auto max-w-6xl px-5">
         <div className="max-w-2xl">
-          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-grape-500">
+            What we do
+          </p>
+          <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-steel-900 sm:text-5xl">
             What the boys do all summer
           </h2>
-          <p className="mt-4 text-lg text-night-200">
+          <p className="mt-4 text-lg text-steel-700">
             Every day is packed — and every week ends with something to look forward to.
           </p>
         </div>
@@ -17,16 +20,16 @@ export default function Highlights() {
           {highlights.map((item) => (
             <li
               key={item.title}
-              className="group rounded-2xl border border-white/10 bg-gradient-to-b from-white/8 to-white/2 p-6 transition hover:-translate-y-1 hover:border-sun-300/40"
+              className="rounded-2xl border border-steel-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-steel-400 hover:shadow-lg hover:shadow-steel-900/10"
             >
               <span
                 aria-hidden="true"
-                className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-night-600 text-2xl shadow-inner"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-steel-50 text-2xl ring-1 ring-steel-100"
               >
                 {item.icon}
               </span>
-              <h3 className="mt-4 text-xl font-bold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-night-200">{item.description}</p>
+              <h3 className="mt-4 text-xl font-bold text-steel-800">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-steel-700">{item.description}</p>
             </li>
           ))}
         </ul>

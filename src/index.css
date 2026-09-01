@@ -1,32 +1,49 @@
 @import 'tailwindcss';
 
+/*
+ * Brand palette sampled directly from the camp flyer (public/media/flyer3.png):
+ *   steel  #2d5c92  "CAMP CHOREF" lettering and the bottom word art
+ *   sun    #ffff00  the "Back for a 13th year" starburst
+ *   grape  #6e2dbd  the WHO / WHERE / WHEN / COST labels
+ *   sand   #7d4917  the word "summer" in the tagline
+ */
 @theme {
   --font-display: 'Baloo 2', ui-rounded, system-ui, sans-serif;
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 
-  --color-night-50: #eeecfa;
-  --color-night-100: #d6d1f2;
-  --color-night-200: #b0a7e6;
-  --color-night-300: #8579d6;
-  --color-night-400: #6153bd;
-  --color-night-500: #4a3c9e;
-  --color-night-600: #3b2f80;
-  --color-night-700: #2e2565;
-  --color-night-800: #221b4b;
-  --color-night-900: #171233;
-  --color-night-950: #0e0b20;
+  --color-steel-50: #eef4fb;
+  --color-steel-100: #d7e4f3;
+  --color-steel-200: #b0c8e6;
+  --color-steel-300: #7ea6d3;
+  --color-steel-400: #4479b7;
+  --color-steel-500: #33689f;
+  --color-steel-600: #2d5c92;
+  --color-steel-700: #244a76;
+  --color-steel-800: #1c3a5c;
+  --color-steel-900: #152c46;
+  --color-steel-950: #0d1c2d;
 
-  --color-sun-50: #fffbeb;
-  --color-sun-100: #fef3c7;
-  --color-sun-200: #fde68a;
-  --color-sun-300: #fcd34d;
-  --color-sun-400: #fbbf24;
-  --color-sun-500: #f59e0b;
-  --color-sun-600: #d97706;
+  --color-sun-100: #ffffcc;
+  --color-sun-200: #ffff99;
+  --color-sun-300: #ffff4d;
+  --color-sun-400: #ffff00;
+  --color-sun-500: #e6e600;
+  --color-sun-600: #b8b800;
+  --color-sun-700: #8a8a00;
 
-  --color-splash-300: #7dd3fc;
-  --color-splash-400: #38bdf8;
-  --color-splash-500: #0ea5e9;
+  --color-grape-50: #f4ecfd;
+  --color-grape-100: #ede0fb;
+  --color-grape-200: #d9c1f6;
+  --color-grape-300: #b98ae9;
+  --color-grape-400: #8f4fd4;
+  --color-grape-500: #6e2dbd;
+  --color-grape-600: #5b249d;
+  --color-grape-700: #47197c;
+
+  --color-sand-100: #f5e9dc;
+  --color-sand-300: #d7c0a8;
+  --color-sand-500: #a8681f;
+  --color-sand-600: #7d4917;
 
   --animate-float: float 6s ease-in-out infinite;
 
@@ -47,7 +64,7 @@
   }
 
   body {
-    @apply bg-night-900 font-sans text-night-50 antialiased;
+    @apply bg-white font-sans text-steel-900 antialiased;
   }
 
   h1,
@@ -57,7 +74,12 @@
   }
 
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-sun-300;
+    @apply outline-2 outline-offset-2 outline-steel-500;
+  }
+
+  /* On the deep-blue hero and footer the yellow starburst is the focus color. */
+  .on-deep :focus-visible {
+    @apply outline-sun-400;
   }
 }
 

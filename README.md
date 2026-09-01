@@ -6,6 +6,27 @@ Marketing and registration site for Camp Choref, a summer day camp for boys ente
 Built with **React 18 + TypeScript + Vite** and styled with **Tailwind CSS v4**.
 Enrollments are stored in **Supabase** (hosted Postgres).
 
+## Branding
+
+The palette is sampled directly from the printed flyer (`public/media/flyer3.png`)
+and defined as Tailwind theme tokens in `src/index.css`:
+
+| Token | Hex | Where it comes from | Where it's used |
+| --- | --- | --- | --- |
+| `steel-600` | `#2d5c92` | "CAMP CHOREF" lettering | Primary buttons, links, headings |
+| `steel-400` | `#4479b7` | the word "cool" in the tagline | Accents, the word "cool" on the site |
+| `sun-400` | `#ffff00` | the "13th year" starburst | Hero CTA, footer rule, nav sign-up |
+| `grape-500` | `#6e2dbd` | WHO / WHERE / WHEN / COST labels | Section eyebrows and detail card titles |
+| `sand-300/600` | `#d7c0a8` / `#7d4917` | the word "summer" in the tagline | The word "summer", warm notices |
+
+Layout follows the flyer's own logic: the deep blue hero and footer give the
+starburst yellow and label purple a dark backdrop to pop against — pure `#ffff00`
+is illegible on white — while the content sections stay on white paper where
+long-form policy text and the registration form read best.
+
+These hex values were sampled pixel-by-pixel from the flyer — they are not
+approximations.
+
 ## Getting started
 
 ```bash
