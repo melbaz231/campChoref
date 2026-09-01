@@ -1,128 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/media/1g2aCqXa.ico" />
+    <title>Camp Choref — The best way to cool off this summer</title>
+    <meta
+      name="description"
+      content="Camp Choref is a day camp for boys entering 2nd through 7th grade. Sports, trips, BBQs, learning, raffles and prizes. July 31 – August 11, 10:00am – 2:30pm."
+    />
+    <meta name="theme-color" content="#3b2f80" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camp Choref</title>
-    <link rel="shortcut icon" type="image/jpg" href="media/1g2aCqXa.ico" />
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.cdnfonts.com/css/jokerman" rel="stylesheet">
-</head>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Camp Choref — Summer Day Camp" />
+    <meta
+      property="og:description"
+      content="Back for a 13th year. Boys entering 2nd–7th grade. Sports, trips, BBQs, prizes and more."
+    />
+    <meta property="og:image" content="/media/pic.png" />
 
-<body>
-    <header id="header">
-        <div id="headerLogo">
-            <img id="logo" src="media/pic.png" alt="Camp Choref logo">
-        </div>
-        <div id="buttonDiv">
-        <button id="register"> <p>Click Here to <br> Register Now!</p> </button>
-    <button id="detailsLink">
-        <p>Click Here to <br> See Details!</p>
-    </button>
-    </div>
-        <!--div id="detailsLinkDiv"><a id="detailsLink" href="#header">Click here to <br> see Details</a></div!-->
-    </header>
-    
-    <iframe id="JotFormIFrame-231155895577166" title="Class Registration" onload="window.parent.scrollTo(0,0)"
-        allowtransparency="true" allowfullscreen="true" allow="geolocation; microphone; camera"
-        src="https://form.jotform.com/231155895577166" frameborder="0"
-        style="min-width:100%;max-width:100%;height:339px;border:none;" scrolling="no">
-    </iframe>
-    <div id="flyerDiv">
-        <img id="flyerImg" src="media/flyer3.png" alt="Camp flyer with details">
-    </div>
-    <div id="detailsDiv">
-        <img id="detailsImg" src="media/details.png" alt="details of camp for 2023 season">
-</div>
-
-
-    <script type="text/javascript">
-        var ifr = document.getElementById("JotFormIFrame-231155895577166");
-        if (ifr) {
-            var src = ifr.src;
-            var iframeParams = [];
-            if (window.location.href && window.location.href.indexOf("?") > -1) {
-                iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-            }
-            if (src && src.indexOf("?") > -1) {
-                iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-                src = src.substr(0, src.indexOf("?"))
-            }
-            iframeParams.push("isIframeEmbed=1");
-            ifr.src = src + "?" + iframeParams.join('&');
-        }
-        window.handleIFrameMessage = function (e) {
-            if (typeof e.data === 'object') { return; }
-            var args = e.data.split(":");
-            if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
-            if (!iframe) { return; }
-            switch (args[0]) {
-                case "scrollIntoView":
-                    iframe.scrollIntoView();
-                    break;
-                case "setHeight":
-                    iframe.style.height = args[1] + "px";
-                    if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
-                        iframe.style.minHeight = args[1] + "px";
-                    }
-                    break;
-                case "collapseErrorPage":
-                    if (iframe.clientHeight > window.innerHeight) {
-                        iframe.style.height = window.innerHeight + "px";
-                    }
-                    break;
-                case "reloadPage":
-                    window.location.reload();
-                    break;
-                case "loadScript":
-                    if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) { break; }
-                    var src = args[1];
-                    if (args.length > 3) {
-                        src = args[1] + ':' + args[2];
-                    }
-                    var script = document.createElement('script');
-                    script.src = src;
-                    script.type = 'text/javascript';
-                    document.body.appendChild(script);
-                    break;
-                case "exitFullscreen":
-                    if (window.document.exitFullscreen) window.document.exitFullscreen();
-                    else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
-                    else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
-                    else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
-                    else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
-                    break;
-            }
-            var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-            if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-                var urls = { "docurl": encodeURIComponent(document.URL), "referrer": encodeURIComponent(document.referrer) };
-                iframe.contentWindow.postMessage(JSON.stringify({ "type": "urls", "value": urls }), "*");
-            }
-        };
-        window.isPermitted = function (originUrl, whitelisted_domains) {
-            var url = document.createElement('a');
-            url.href = originUrl;
-            var hostname = url.hostname;
-            var result = false;
-            if (typeof hostname !== 'undefined') {
-                whitelisted_domains.forEach(function (element) {
-                    if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
-                        result = true;
-                    }
-                });
-                return result;
-            }
-        };
-        if (window.addEventListener) {
-            window.addEventListener("message", handleIFrameMessage, false);
-        } else if (window.attachEvent) {
-            window.attachEvent("onmessage", handleIFrameMessage);
-        }
-    </script>
-
-</body>
-<script src="index.js"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
